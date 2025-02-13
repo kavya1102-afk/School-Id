@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_bt5"
+        android:title=""
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/nav_bt2"
+        android:icon="@drawable/ic_user"
+        android:title=""
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/nav_school"
+        android:icon="@drawable/ic_bt2"
+        android:title=""
+        app:showAsAction="collapseActionView"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_bt4"
+        android:title=""
+        app:showAsAction="collapseActionView"/>
+
+</menu>

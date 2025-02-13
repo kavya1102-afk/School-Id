@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Id Studio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="msg_id">The details to be printed on the ID card are listed below, where you can check or uncheck them as per your preference. If you want to add any extra fields, you can do so by clicking the \'Customize\' button.</string>
+    <string-array name="agent_type_list">
+        <item>Premium Agent</item>
+        <item>Regular Agent</item>
+    </string-array>
+
+    <string-array name="agent_list">
+        <item>Vishesh</item>
+        <item>Girjesh</item>
+        <item>Saqib</item>
+        <item>Ritik</item>
+        <item>Kavya</item>
+        <item>Garima</item>
+    </string-array>
+
+    <string-array name="status_list">
+        <item>Active</item>
+        <item>In-Active</item>
+    </string-array>
+
+</resources>

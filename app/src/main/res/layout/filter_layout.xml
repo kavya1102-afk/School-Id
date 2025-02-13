@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/selectedText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected Status: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="Select Status"
+            android:background="@drawable/editext_background"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/applyFilterBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:backgroundTint="#22316C"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:text="Apply"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        app:cornerRadius="10dp"
+        app:iconTint="@android:color/white"
+        app:strokeColor="@android:color/transparent"
+        tools:ignore="HardcodedText" />
+
+    <!-- Display Selected Value -->
+
+</LinearLayout>

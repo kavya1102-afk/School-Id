@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:paddingVertical="15dp"
+    android:paddingHorizontal="15dp"
+    android:background="@drawable/card_background2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agent Id"
+            android:paddingEnd="10dp"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#283837"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agent Name"
+            android:textSize="16sp"
+            android:paddingEnd="10dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mukesh Kumar"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:paddingEnd="10dp"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sector - 16, Noida"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact No."
+            android:paddingEnd="10dp"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+91 9999998889"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Id"
+            android:textSize="16sp"
+            android:paddingEnd="10dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mohitsharma01@gmail.com"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total School"
+            android:paddingEnd="10dp"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentAddSchool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/agentSubscriptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subscription"
+            android:paddingEnd="10dp"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentSubscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="25 Days Lefts"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textSize="16sp"
+            android:paddingEnd="10dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/agentStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Active"
+            android:textSize="16sp"
+            android:layout_weight=".6"
+            android:textColor="#00B931"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Action"
+            android:textSize="16sp"
+            android:paddingEnd="10dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#797D8C"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="16sp"
+            android:layout_weight="1.4"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6">
+            
+            <ImageView
+                android:id="@+id/editAgent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/edit_icon"/>
+
+            <ImageView
+                android:id="@+id/viewInfoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:src="@drawable/eye_icon"/>
+
+            <ImageView
+                android:id="@+id/deleteAgent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/delete_icon"/>
+            
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
