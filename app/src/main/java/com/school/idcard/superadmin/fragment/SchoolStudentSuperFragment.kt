@@ -82,14 +82,17 @@ class SchoolStudentSuperFragment : Fragment(),AgentActionListener {
                 if (response.isSuccessful) {
                     val data = response.body()?.students
                     if (data != null) {
-                        for (i in data){
-                            studentList.add(StudentSuperAdmin(i.id,i.schoolid,i.schoolid,i.studentname,i.classno,i.mothername,i.fathername,i.contactno,i.section,i.gender,i.dateofbirth,i.address,i.admissiondate,i.details,i.photo,i.session,i.status,i.approvedTeacher,i.approvedAdmin,i.cardDesign,i.extrafieldsList))
-                            binding.rvSchoolStudent.adapter = adapter
-                            adapter.notifyDataSetChanged()
+                        if (data.isNotEmpty()) {
+                            for (i in data){
+                                studentList.add(StudentSuperAdmin(i.id,i.schoolid,i.schoolid,i.studentname,i.classno,i.mothername,i.fathername,i.contactno,i.section,i.gender,i.dateofbirth,i.address,i.admissiondate,i.details,i.photo,i.session,i.status,i.approvedTeacher,i.approvedAdmin,i.cardDesign,i.extrafieldsList))
+                                binding.rvSchoolStudent.adapter = adapter
+                                adapter.notifyDataSetChanged()
+                            }
+                            Toast.makeText(requireContext(), "Students fetched successfully", Toast.LENGTH_SHORT).show()
+                        } else {
+                            binding.noDataFound.visibility=View.VISIBLE
+                            Toast.makeText(requireContext(), "No students found", Toast.LENGTH_SHORT).show()
                         }
-                        Toast.makeText(requireContext(), "Students fetched successfully", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(requireContext(), "No students found", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     Toast.makeText(requireContext(), "Error: ${response.message()}", Toast.LENGTH_SHORT).show()

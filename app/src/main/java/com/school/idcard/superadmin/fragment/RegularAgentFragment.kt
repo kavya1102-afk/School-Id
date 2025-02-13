@@ -78,12 +78,16 @@ class RegularAgentFragment : Fragment(), AgentActionListener {
                 if(response.isSuccessful){
                     agentList.clear()
                     val data = response.body()!!.agents
-                    for(i in data){
-                        if(i.agentType=="NORMAL"){
-                            agentList.add(Agent(i.id,i.agentId,i.firstName,i.lastName,i.contactNo,i.address1,i.address2,i.agentEmail,i.status,i.city,i.pinCode,i.state,i.country,i.agentType,i.startSub,i.endSubs,i.subsStatus,i.noOfSchool,i.noOfStudent,i.noOfPendingCard,i.noOfSubmittedCard,i.noOfApprovedCard,i.noOfReceivePrintCard,i.noOfPrintProgressCard,i.noOfPrintedCard,i.noOfDeliveredCard))
+                    if(data!=null){
+                        for(i in data){
+                            if(i.agentType=="NORMAL"){
+                                agentList.add(Agent(i.id,i.agentId,i.firstName,i.lastName,i.contactNo,i.address1,i.address2,i.agentEmail,i.status,i.city,i.pinCode,i.state,i.country,i.agentType,i.startSub,i.endSubs,i.subsStatus,i.noOfSchool,i.noOfStudent,i.noOfPendingCard,i.noOfSubmittedCard,i.noOfApprovedCard,i.noOfReceivePrintCard,i.noOfPrintProgressCard,i.noOfPrintedCard,i.noOfDeliveredCard))
+                            }
+                            binding.rvAgentList2.adapter = adapter
+                            adapter.notifyDataSetChanged()
                         }
-                        binding.rvAgentList2.adapter = adapter
-                        adapter.notifyDataSetChanged()
+                    }else{
+                        binding.noDataFound.visibility==View.VISIBLE
                     }
                 }
             }

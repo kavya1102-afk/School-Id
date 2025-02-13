@@ -86,6 +86,7 @@ class SchoolStaffSuperFragment : Fragment(), AgentActionListener {
                         adapter.notifyDataSetChanged()
                         Toast.makeText(requireContext(), "Staff fetched successfully", Toast.LENGTH_SHORT).show()
                     } else {
+                        binding.noDataFound.visibility==View.VISIBLE
                         Toast.makeText(requireContext(), "No Staff found", Toast.LENGTH_SHORT).show()
                     }
                 } else {
@@ -104,7 +105,7 @@ class SchoolStaffSuperFragment : Fragment(), AgentActionListener {
     }
 
     override fun onDeleteStaff(agentId: String) {
-        val token="Bearer ${sharedPrefManager.getToken()}"
+        val token = "Bearer ${sharedPrefManager.getToken()}"
         ApiClient.apiInterface.deleteStaff(token.toString(), agentId).enqueue(object : Callback<CommonResponse>{
             override fun onResponse(call: Call<CommonResponse>, response: Response<CommonResponse>) {
                 if(response.isSuccessful){
