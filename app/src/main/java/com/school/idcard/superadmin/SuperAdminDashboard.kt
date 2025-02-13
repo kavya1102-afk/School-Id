@@ -1,21 +1,15 @@
 package com.school.idcard.superadmin
 
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.school.idcard.R
-import com.school.idcard.superadmin.adapter.super_details_card_adapter
 import com.school.idcard.databinding.ActivitySuperAdminDashboardBinding
 import com.school.idcard.superadmin.fragment.SchoolListFragment
 import com.school.idcard.superadmin.fragment.SuperAdminAgentFragment
 import com.school.idcard.superadmin.fragment.SuperAdminHomeFragment
 import com.school.idcard.superadmin.fragment.SuperadminProfileFragment
-import com.school.idcard.superadmin.model.CardDetailsModel
 
 @Suppress("IMPLICIT_CAST_TO_ANY")
 class SuperAdminDashboard : AppCompatActivity() {
