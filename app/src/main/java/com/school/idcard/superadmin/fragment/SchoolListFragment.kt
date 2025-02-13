@@ -79,11 +79,15 @@ class SchoolListFragment : Fragment() {
                 if (response.isSuccessful) {
                     schoolList.clear()
                     val data = response.body()!!.schools
-                    for (i in data) {
-                        schoolList.add(School(i.id,i.schoolId,i.schoolName,i.contactNo,i.address1,i.address2,i.city,i.pinCode,i.state,i.country,i.schoolEmail,i.principalName,i.agentId,i.status,i.createDate,i.idCardDesign))
-                    }
-                    binding.rvSchoolList.adapter = adapter
-                    adapter.notifyDataSetChanged()
+                   if(data==null){
+                       binding.noDataFound.visibility==View.VISIBLE
+                   }else{
+                       for (i in data) {
+                           schoolList.add(School(i.id,i.schoolId,i.schoolName,i.contactNo,i.address1,i.address2,i.city,i.pinCode,i.state,i.country,i.schoolEmail,i.principalName,i.agentId,i.status,i.createDate,i.idCardDesign))
+                       }
+                       binding.rvSchoolList.adapter = adapter
+                       adapter.notifyDataSetChanged()
+                   }
                 }
             }
 
