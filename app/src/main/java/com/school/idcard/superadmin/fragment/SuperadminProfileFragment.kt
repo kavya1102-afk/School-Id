@@ -2,16 +2,14 @@ package com.school.idcard.superadmin.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.tabs.TabLayoutMediator
-import com.school.idcard.R
-import com.school.idcard.databinding.FragmentSuperAdminAgentBinding
+import androidx.fragment.app.Fragment
 import com.school.idcard.databinding.FragmentSuperadminProfileBinding
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.other.LoginPage
+import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
 
 
 class SuperadminProfileFragment : Fragment() {
@@ -35,6 +33,10 @@ class SuperadminProfileFragment : Fragment() {
 //        binding.logoutBtn.setOnClickListener {
 //
 //        }
+
+        binding.toolbar.toolbar.sideMenu.setOnClickListener { requireContext().startActivity(
+            Intent(requireContext(), SuperAdminSideMenuActivity::class.java)
+        ) }
 
     }
 

@@ -1,20 +1,16 @@
 package com.school.idcard.superadmin.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-import com.school.idcard.R
 import com.school.idcard.databinding.FragmentSuperAdminAgentBinding
-import com.school.idcard.databinding.FragmentSuperAdminHomeBinding
-import com.school.idcard.superadmin.adapter.super_details_card_adapter
-import com.school.idcard.superadmin.model.CardDetailsModel
+import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
 
 class SuperAdminAgentFragment : Fragment() {
 
@@ -36,7 +32,9 @@ class SuperAdminAgentFragment : Fragment() {
         binding.viewPager.adapter = adapter
         binding.viewPager.offscreenPageLimit = 1
 
-
+        binding.toolbar2.sideMenu.setOnClickListener { requireContext().startActivity(
+            Intent(requireContext(), SuperAdminSideMenuActivity::class.java)
+        ) }
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = if (position == 0) "Premium Agent" else "Regular Agent"
         }.attach()

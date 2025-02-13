@@ -1,5 +1,6 @@
 package com.school.idcard.superadmin.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.school.idcard.databinding.FragmentSuperAdminHomeBinding
+import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
 import com.school.idcard.superadmin.adapter.super_details_card_adapter
 import com.school.idcard.superadmin.model.CardDetailsModel
 
@@ -26,8 +28,9 @@ class SuperAdminHomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.profileCard.toolbar.sideMenu.setOnClickListener {
-//            requireContext().startActivity(Intent(requireContext(), ))
+        binding.profileCard.toolbar.sideMenu.setOnClickListener { requireContext().startActivity(
+            Intent(requireContext(),SuperAdminSideMenuActivity::class.java)
+        ) }
 
 
         binding.rvDetailsCard.layoutManager=
