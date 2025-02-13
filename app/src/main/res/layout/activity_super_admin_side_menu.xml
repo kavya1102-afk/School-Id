@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".superadmin.activity.SuperAdminSideMenuActivity"
-    android:orientation="vertical"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="@drawable/background"
-        android:padding="16dp"
+        android:layout_height="match_parent"
+        tools:context=".superadmin.activity.SuperAdminSideMenuActivity"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="20dp"
-            android:paddingBottom="20dp">
-
-            <!-- Drawer Icon -->
+            android:layout_height="150dp"
+            android:background="@drawable/background"
+            android:padding="16dp"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="24dp"
@@ -34,274 +24,274 @@
                 android:layout_marginEnd="16dp"/>
 
 
-
-
-        </LinearLayout>
-
-
-        <!-- Profile Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-
-            <ImageView
-                android:layout_width="75dp"
-                android:layout_height="60dp"
-                android:src="@drawable/profile"
-                android:scaleType="centerCrop"
-                android:padding="4dp"
-                android:elevation="4dp"
-                android:layout_marginEnd="18dp"/>
-
-
+            <!-- Profile Section -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hello, Welcome 🎉"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
 
-                <TextView
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/profile"
+                    android:scaleType="centerCrop"
+                    android:padding="4dp"
+                    android:elevation="4dp"
+                    android:layout_marginEnd="18dp"/>
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Savannah Nguyen"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello, Welcome 🎉"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Savannah Nguyen"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
-        android:padding="16dp"
-        android:orientation="vertical"
-        android:background="@android:color/white">
-
-        <!-- Account Details -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Account Details"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#28387B"
-            android:paddingBottom="8dp"/>
-
-        <!-- Dashboard Option -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:background="@android:color/white"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:background="@android:color/white">
 
-            >
+            <!-- Account Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Details"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#28387B"
+                android:paddingBottom="8dp"/>
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/dashboardicon"
-                android:layout_marginEnd="12dp"/>
+            <!-- Dashboard Option -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dashboardicon"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dashboard"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2C2C2C" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/agenticon"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Agent Details"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2C2C2C" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/school"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="School"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2C2C2C" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+
+            </LinearLayout>
+
+
+            <!-- Add more menu items here -->
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/black"
+                android:layout_margin="10dp"
+                >
+
+            </View>
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dashboard"
-                android:textSize="14sp"
-                android:textColor="#2C2C2C"
+                android:text=" Profile Details"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#28387B"
+                android:paddingBottom="8dp"
                 />
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/arrow_right"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:background="@android:color/white"
-
-            >
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/agenticon"
-                android:layout_marginEnd="12dp"/>
-
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Agent Details"
-                android:textColor="#2C2C2C"
-                android:textSize="14sp"/>
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/arrow_right"/>
-        </LinearLayout>
+                >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:background="@android:color/white"
-            >
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/myaccount"
+                    android:layout_marginEnd="12dp"/>
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/school"
-                android:layout_marginEnd="12dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="My Account"
+                    android:textSize="14sp"
+                    android:textColor="#2C2C2C"
+                    />
 
-            <TextView
-                android:layout_width="0dp"
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="School Details"
-                android:textColor="#2C2C2C"
-                android:textSize="14sp"/>
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/arrow_right"/>
-        </LinearLayout>
+                >
 
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/changepassw"
+                    android:layout_marginEnd="12dp"/>
 
-        <!-- Add more menu items here -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Change Password"
+                    android:textColor="#2C2C2C"
+                    android:textSize="14sp"/>
 
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+            </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:background="@color/black"
-            android:layout_margin="10dp"
-            >
-
-        </View>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Profile Details"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#28387B"
-            android:paddingBottom="8dp"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:background="@android:color/white"
-
-            >
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/myaccount"
-                android:layout_marginEnd="12dp"/>
-
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="My Account"
-                android:textSize="14sp"
-                android:textColor="#2C2C2C"
-                />
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                >
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/arrow_right"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/logout"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Logout"
+                    android:textColor="#2C2C2C"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+            </LinearLayout>
+
+
+
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:background="@android:color/white"
-
-            >
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/changepassw"
-                android:layout_marginEnd="12dp"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Change Password"
-                android:textColor="#2C2C2C"
-                android:textSize="14sp"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/arrow_right"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:background="@android:color/white"
-            >
-
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/logout"
-                android:layout_marginEnd="12dp"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Logout"
-                android:textColor="#2C2C2C"
-                android:textSize="14sp"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/arrow_right"/>
-        </LinearLayout>
-
-
-
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>
