@@ -15,6 +15,7 @@ import com.school.idcard.othermodel.School
 import com.school.idcard.othermodel.SchoolResponse
 import com.school.idcard.superadmin.activity.AddSchoolActivity
 import com.school.idcard.superadmin.activity.SubmittedForPrintScreen
+import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
 import com.school.idcard.superadmin.adapter.SchoolListAdapter
 import com.scriza.scrizapay.network.ApiClient
 import retrofit2.Call
@@ -54,6 +55,10 @@ class SchoolListFragment : Fragment() {
                     .putExtra("type", 0)
             )
         }
+
+        binding.toolbar.sideMenu.setOnClickListener { requireContext().startActivity(
+            Intent(requireContext(), SuperAdminSideMenuActivity::class.java)
+        ) }
 
         binding.filterBtnSchool.setOnClickListener {
             val bottomSheet = StatusBottomSheetFragment { selectedStatus ->
