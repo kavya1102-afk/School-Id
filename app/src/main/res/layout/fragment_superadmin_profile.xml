@@ -125,7 +125,8 @@
                     android:gravity="start"
                     android:text="Agent Name"
                     android:textColor="#797D8C"
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -143,8 +144,9 @@
                     android:layout_weight=".4"
                     android:gravity="end"
                     android:text="Mohit Sharma"
+                    android:textStyle="bold"
                     android:textColor="#2C2C2C"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -153,6 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
+
                 android:orientation="horizontal">
 
 
@@ -163,7 +166,8 @@
                     android:gravity="start"
                     android:text="Contact No"
                     android:textColor="#797D8C"
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -181,10 +185,12 @@
                     android:layout_weight=".4"
                     android:gravity="end"
                     android:text="+91 9988635214"
+                    android:textStyle="bold"
                     android:textColor="#2C2C2C"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -194,32 +200,35 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
                     android:text="Status"
                     android:textColor="#797D8C"
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="1.3"
                     android:gravity="center"
                     android:text=":"
                     android:textColor="#2C2C2C"
+
                     android:textSize="14sp" />
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight=".4"
                     android:gravity="end"
+                    android:textStyle="bold"
                     android:text="Active"
                     android:textColor="#00B931"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
 
@@ -258,18 +267,20 @@
 
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
+
                     android:text="Address"
                     android:textColor="#797D8C"
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="1.3"
                     android:gravity="center"
                     android:text=":"
                     android:textColor="#2C2C2C"
@@ -277,14 +288,14 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight=".4"
                     android:gravity="end"
                     android:text="euheuhw dieiehei"
                     android:textColor="#2C2C2C"
-
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -296,18 +307,19 @@
 
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
                     android:text="City"
+                    android:textStyle="bold"
                     android:textColor="#797D8C"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="1.3"
                     android:gravity="center"
                     android:text=":"
                     android:textColor="#2C2C2C"
@@ -315,14 +327,14 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight=".4"
                     android:gravity="end"
                     android:text="New Delhi"
                     android:textColor="#2C2C2C"
-
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -334,18 +346,19 @@
 
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
                     android:text="State"
                     android:textColor="#797D8C"
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="1.3"
                     android:gravity="center"
                     android:text=":"
                     android:textColor="#2C2C2C"
@@ -353,14 +366,14 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight=".4"
                     android:gravity="end"
                     android:text="Delhi"
                     android:textColor="#2C2C2C"
-
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -372,18 +385,19 @@
 
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="Pincode"
+                    android:text="PinCode"
                     android:textColor="#797D8C"
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="1.3"
                     android:gravity="center"
                     android:text=":"
                     android:textColor="#2C2C2C"
@@ -391,14 +405,14 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight=".4"
                     android:gravity="end"
-                    android:text="132908"
+                    android:text="111098"
                     android:textColor="#2C2C2C"
-
-                    android:textSize="13sp" />
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
             </LinearLayout>
 
         </LinearLayout>
