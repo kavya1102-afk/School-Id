@@ -17,7 +17,7 @@ import com.school.idcard.superadmin.activity.AddAgentActivity
 import com.school.idcard.superadmin.adapter.AgentListAdapter
 import com.school.idcard.superadmin.model.Agent
 import com.school.idcard.superadmin.model.AgentListModel
-import com.scriza.scrizapay.network.ApiClient
+import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

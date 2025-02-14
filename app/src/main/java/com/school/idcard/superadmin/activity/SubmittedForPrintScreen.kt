@@ -11,7 +11,7 @@ import com.school.idcard.R
 import com.school.idcard.databinding.ActivitySubmittedForPrintScreenBinding
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.SchoolsResponse2
-import com.scriza.scrizapay.network.ApiClient
+import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -17,7 +17,7 @@ import com.school.idcard.superadmin.activity.AddSchoolActivity
 import com.school.idcard.superadmin.activity.SubmittedForPrintScreen
 import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
 import com.school.idcard.superadmin.adapter.SchoolListAdapter
-import com.scriza.scrizapay.network.ApiClient
+import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

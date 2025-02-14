@@ -3,10 +3,7 @@ package com.school.idcard.other
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.school.idcard.R
 import com.school.idcard.databinding.ActivityLoginPageBinding
@@ -14,7 +11,7 @@ import com.school.idcard.network.LoginRequest
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.LoginResponse
 import com.school.idcard.superadmin.SuperAdminDashboard
-import com.scriza.scrizapay.network.ApiClient
+import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -18,7 +18,7 @@ import com.school.idcard.network.CommonResponse
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.AgentResponse
 import com.school.idcard.superadmin.SuperAdminDashboard
-import com.scriza.scrizapay.network.ApiClient
+import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

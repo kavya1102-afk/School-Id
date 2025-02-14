@@ -1,7 +1,6 @@
-package com.scriza.scrizapay.network
+package com.school.idcard.network
 
 import com.google.gson.GsonBuilder
-import com.school.idcard.network.ApiInterface
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -26,8 +25,8 @@ class ApiClient {
                 .connectTimeout(60,TimeUnit.SECONDS)
                 .build()
             Retrofit.Builder()
-//                .baseUrl("https://scriwo.com/id/")
-                .baseUrl("http://192.168.1.12:6001/")
+                .baseUrl("https://scriwo.com/id/")
+//                .baseUrl("http://192.168.1.12:6001/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()
