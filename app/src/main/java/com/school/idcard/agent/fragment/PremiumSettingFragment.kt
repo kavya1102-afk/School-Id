@@ -31,6 +31,14 @@ class PremiumSettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val role=sharedPrefManager.getRole()
+
+        if(role=="NORMAL"){
+            binding.addSchoolSide.visibility=View.GONE
+        }else{
+            binding.addSchoolSide.visibility=View.VISIBLE
+        }
+
         binding.homeSide.setOnClickListener {
             startActivity(
                 Intent(

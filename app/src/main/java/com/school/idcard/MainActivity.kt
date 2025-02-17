@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
                     "PREMIUM" -> {
                         startActivity(Intent(this,PremiumAgentDashboard::class.java))
                     }
+                    "NORMAL" -> {
+                        startActivity(Intent(this,PremiumAgentDashboard::class.java))
+                    }
                     else -> {
                         Toast.makeText(this,"Coming Soon", Toast.LENGTH_SHORT).show()
                     }

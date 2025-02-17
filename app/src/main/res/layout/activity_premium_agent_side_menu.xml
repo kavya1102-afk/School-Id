@@ -225,7 +225,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="LogOut"
+                    android:text="Logout"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#2C2C2C" />

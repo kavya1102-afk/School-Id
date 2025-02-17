@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.school.idcard.databinding.FragmentPremiumProfileBinding
-import com.school.idcard.databinding.FragmentSuperadminProfileBinding
 import com.school.idcard.network.ApiClient
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.ProfileResponse
@@ -37,6 +36,7 @@ class PremiumProfileFragment : Fragment() {
 
 
         binding.toolbar.toolbar.sideMenu.visibility=View.GONE
+
         getProfile()
 
     }
