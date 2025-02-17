@@ -111,6 +111,7 @@
                         layout="@layout/edittext_layout" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/agentSpinner"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -7,22 +7,14 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".superadmin.activity.SuperAdminSideMenuActivity"
         android:orientation="vertical">
-  
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@drawable/background"
             android:padding="16dp"
             android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/baseline_arrow_back_ios_24"
-                android:layout_marginEnd="16dp"/>
-
 
             <!-- Profile Section -->
             <LinearLayout
@@ -107,37 +99,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Dashboard"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#2C2C2C" />
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/arrow_right"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/addAgentSide"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:gravity="center_vertical"
-                android:background="@android:color/white">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/agenticon"
-                    android:layout_marginEnd="12dp"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Add Agent"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#2C2C2C" />

@@ -12,11 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.school.idcard.R
 import com.school.idcard.databinding.ActivityAddSchoolBinding
+import com.school.idcard.network.ApiClient
 import com.school.idcard.network.CommonResponse
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.AgentResponse2
 import com.school.idcard.superadmin.SuperAdminDashboard
-import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +26,7 @@ class AddSchoolActivity : AppCompatActivity() {
     private lateinit var binding:ActivityAddSchoolBinding
     private lateinit var sharedPrefManager: SharedPrefManager
     private var status2:String="Active"
+    private var role:String="SUPERADMIN"
     private lateinit var selectedAgentId:String
     val selectedFields = mutableListOf<String>()
     private val agentMap = mutableMapOf<String, String>() // Key: Name, Value: ID
@@ -35,6 +36,7 @@ class AddSchoolActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_add_school)
         sharedPrefManager=SharedPrefManager(this)
+        role=sharedPrefManager.getRole().toString()
 
         binding.toolbar.fileName.text="Add School"
         binding.toolbar.backArrowBtn.setOnClickListener { finish() }
@@ -46,7 +48,12 @@ class AddSchoolActivity : AppCompatActivity() {
             binding.schoolIdEt.textInputLayout.visibility=View.GONE
         }
 
-        fetchAgents()
+        if(role=="SUPERADMIN"){
+            fetchAgents()
+            binding.agentSpinner.visibility=View.VISIBLE
+        }else{
+            binding.agentSpinner.visibility=View.GONE
+        }
 
         binding.autoCompleteTextView.setOnItemClickListener { parent, view, position, id ->
             val selectedAgentName = parent.getItemAtPosition(position).toString()
@@ -54,11 +61,7 @@ class AddSchoolActivity : AppCompatActivity() {
             selectedAgentId = agentMap[selectedAgentName].toString()
 
             // Now you can use the selectedAgentId wherever necessary, for example:
-            if (selectedAgentId != null) {
-                Toast.makeText(this@AddSchoolActivity, "Selected Agent ID: $selectedAgentId", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this@AddSchoolActivity, "Agent not found.", Toast.LENGTH_SHORT).show()
-            }
+            Toast.makeText(this@AddSchoolActivity, "Selected Agent ID: $selectedAgentId", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -246,7 +249,7 @@ class AddSchoolActivity : AppCompatActivity() {
 
     private fun fetchAgents() {
         val token="Bearer ${sharedPrefManager.getToken()}"
-        ApiClient.apiInterface.getAgentList(token.toString()).enqueue(object : Callback<AgentResponse2>{
+        ApiClient.apiInterface.getAgentList(token).enqueue(object : Callback<AgentResponse2>{
             override fun onResponse(call: Call<AgentResponse2>, response: Response<AgentResponse2>) {
                 if(response.isSuccessful){
                     val agentResponse = response.body()

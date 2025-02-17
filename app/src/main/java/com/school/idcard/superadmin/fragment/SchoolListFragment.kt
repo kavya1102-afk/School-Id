@@ -10,14 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.school.idcard.databinding.FragmentSchoolListBinding
+import com.school.idcard.network.ApiClient
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.School
 import com.school.idcard.othermodel.SchoolResponse
 import com.school.idcard.superadmin.activity.AddSchoolActivity
 import com.school.idcard.superadmin.activity.SubmittedForPrintScreen
-import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
 import com.school.idcard.superadmin.adapter.SchoolListAdapter
-import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -56,9 +55,7 @@ class SchoolListFragment : Fragment() {
             )
         }
 
-        binding.toolbar.sideMenu.setOnClickListener { requireContext().startActivity(
-            Intent(requireContext(), SuperAdminSideMenuActivity::class.java)
-        ) }
+        binding.toolbar.sideMenu.visibility=View.GONE
 
         binding.filterBtnSchool.setOnClickListener {
             val bottomSheet = StatusBottomSheetFragment { selectedStatus ->

@@ -5,6 +5,11 @@ class LoginRequest (
     val password:String
 )
 
+class changePasswordRequest (
+    val oldPassword:String,
+    val newPassword:String
+)
+
 
 class AddSchoolRequest(
     val schoolName: String,

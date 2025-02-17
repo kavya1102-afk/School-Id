@@ -12,6 +12,7 @@ class SharedPrefManager(context: Context) {
     companion object {
         private const val PREF_NAME = "my_prefs"
         private const val KEY_TOKEN = "auth_token"
+        private const val KEY_ROLE = "role"
     }
 
     // Save token
@@ -23,6 +24,16 @@ class SharedPrefManager(context: Context) {
     // Get token
     fun getToken(): String? {
         return sharedPreferences.getString(KEY_TOKEN, null)
+    }
+
+    fun saveRole(token: String) {
+        editor.putString(KEY_ROLE, token)
+        editor.apply()
+    }
+
+    // Get token
+    fun getRole(): String? {
+        return sharedPreferences.getString(KEY_ROLE, null)
     }
 
     // Clear data (for logout)

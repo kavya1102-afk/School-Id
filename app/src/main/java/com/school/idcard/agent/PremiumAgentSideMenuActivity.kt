@@ -1,41 +1,30 @@
-package com.school.idcard.superadmin.activity
+package com.school.idcard.agent
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.school.idcard.R
-import com.school.idcard.databinding.ActivitySuperAdminSideMenuBinding
+import com.school.idcard.databinding.ActivityPremiumAgentSideMenuBinding
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.other.ChangePasswordActivity
 import com.school.idcard.other.LoginPage
-import com.school.idcard.superadmin.SuperAdminDashboard
+import com.school.idcard.superadmin.activity.AddSchoolActivity
 
-class SuperAdminSideMenuActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivitySuperAdminSideMenuBinding
+class PremiumAgentSideMenuActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPremiumAgentSideMenuBinding
     private lateinit var sharedPrefManager: SharedPrefManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_super_admin_side_menu)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_premium_agent_side_menu)
         sharedPrefManager = SharedPrefManager(this)
 
         binding.homeSide.setOnClickListener {
             startActivity(
                 Intent(
                     this,
-                    SuperAdminDashboard::class.java
-                )
-            )
-            finish()
-        }
-
-        binding.addAgentSide.setOnClickListener {
-            startActivity(
-                Intent(
-                    this,
-                    AddAgentActivity::class.java
+                    PremiumAgentDashboard::class.java
                 )
             )
             finish()

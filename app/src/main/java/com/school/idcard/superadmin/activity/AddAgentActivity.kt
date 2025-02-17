@@ -14,11 +14,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.school.idcard.R
 import com.school.idcard.databinding.ActivityAddAgentBinding
+import com.school.idcard.network.ApiClient
 import com.school.idcard.network.CommonResponse
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.AgentResponse
 import com.school.idcard.superadmin.SuperAdminDashboard
-import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -112,6 +112,61 @@ class AddAgentActivity : AppCompatActivity() {
 
         // Handling Button Click
         binding.addAgentBtn.setOnClickListener {
+            val firstName = binding.addAgentFirstName.textInputLayout.editText?.text?.trim().toString()
+            val lastName = binding.addAgentLastName.textInputLayout.editText?.text?.trim().toString()
+            val email = binding.addAgentEmail.textInputLayout.editText?.text?.trim().toString()
+            val contact = binding.addAgentContact.textInputLayout.editText?.text?.trim().toString()
+            val pincode = binding.addAgentPincode.textInputLayout.editText?.text?.trim().toString()
+            val state = binding.addAgentState.textInputLayout.editText?.text?.trim().toString()
+            val city = binding.addAgentCity.textInputLayout.editText?.text?.trim().toString()
+            val country = binding.addAgentCountry.textInputLayout.editText?.text?.trim().toString()
+            val address = binding.addAgentAddress.textInputLayout.editText?.text?.trim().toString()
+
+            // Validation for empty fields
+            if (firstName.isEmpty()) {
+                binding.addAgentFirstName.textInputLayout.error = "First Name cannot be empty"
+                return@setOnClickListener
+            } else binding.addAgentFirstName.textInputLayout.error = null
+
+            if (lastName.isEmpty()) {
+                binding.addAgentLastName.textInputLayout.error = "Last Name cannot be empty"
+                return@setOnClickListener
+            } else binding.addAgentLastName.textInputLayout.error = null
+
+            if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.addAgentEmail.textInputLayout.error = "Enter a valid Email"
+                return@setOnClickListener
+            } else binding.addAgentEmail.textInputLayout.error = null
+
+            if (contact.isEmpty() || contact.length != 10) {
+                binding.addAgentContact.textInputLayout.error = "Enter a valid 10-digit Contact Number"
+                return@setOnClickListener
+            } else binding.addAgentContact.textInputLayout.error = null
+
+            if (pincode.isEmpty() || pincode.length != 6) {
+                binding.addAgentPincode.textInputLayout.error = "Enter a valid 6-digit Pincode"
+                return@setOnClickListener
+            } else binding.addAgentPincode.textInputLayout.error = null
+
+            if (state.isEmpty()) {
+                binding.addAgentState.textInputLayout.error = "State cannot be empty"
+                return@setOnClickListener
+            } else binding.addAgentState.textInputLayout.error = null
+
+            if (city.isEmpty()) {
+                binding.addAgentCity.textInputLayout.error = "City cannot be empty"
+                return@setOnClickListener
+            } else binding.addAgentCity.textInputLayout.error = null
+
+            if (country.isEmpty()) {
+                binding.addAgentCountry.textInputLayout.error = "Country cannot be empty"
+                return@setOnClickListener
+            } else binding.addAgentCountry.textInputLayout.error = null
+
+            if (address.isEmpty()) {
+                binding.addAgentAddress.textInputLayout.error = "Address cannot be empty"
+                return@setOnClickListener
+            } else binding.addAgentAddress.textInputLayout.error = null
             if (binding.addAgentBtn.text == "Update Agent") updateAgent() else addAgent()
         }
     }

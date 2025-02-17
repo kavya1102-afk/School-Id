@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.textfield.TextInputLayout
 import com.school.idcard.R
+import com.school.idcard.agent.PremiumAgentDashboard
 import com.school.idcard.databinding.ActivityLoginPageBinding
+import com.school.idcard.network.ApiClient
 import com.school.idcard.network.LoginRequest
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.LoginResponse
 import com.school.idcard.superadmin.SuperAdminDashboard
-import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,9 +30,28 @@ class LoginPage : AppCompatActivity() {
         binding.userNameEt.textInputLayout.hint="Registered Email Id"
         binding.passwordEt.textInputLayout.hint="Password"
 
+        binding.passwordEt.textInputLayout.endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE
+
+
         binding.loginBtn.setOnClickListener {
             val userName= binding.userNameEt.textInputLayout.editText!!.text.trim().toString()
             val password= binding.passwordEt.textInputLayout.editText!!.text.trim().toString()
+
+
+            if (userName.isEmpty()) {
+                binding.userNameEt.textInputLayout.error = "Username cannot be empty"
+                return@setOnClickListener
+            } else {
+                binding.userNameEt.textInputLayout.error = null  // Remove error if input is valid
+            }
+
+            // Check if password is empty
+            if (password.isEmpty()) {
+                binding.passwordEt.textInputLayout.error = "Password cannot be empty"
+                return@setOnClickListener
+            } else {
+                binding.passwordEt.textInputLayout.error = null  // Remove error if input is valid
+            }
 
             loginFun(userName, password)
 
@@ -48,7 +69,12 @@ class LoginPage : AppCompatActivity() {
                 if(response.isSuccessful){
                     if(response.body()!!.roleType=="SUPERADMIN"){
                         sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
+                        sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
                         startActivity(Intent(this@LoginPage,SuperAdminDashboard::class.java))
+                    }else if(response.body()!!.roleType=="PREMIUM"){
+                        sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
+                        sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
+                        startActivity(Intent(this@LoginPage,PremiumAgentDashboard::class.java))
                     }else{
                         Toast.makeText(this@LoginPage,"Coming Soon", Toast.LENGTH_SHORT).show()
                     }

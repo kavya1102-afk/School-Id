@@ -142,6 +142,11 @@ interface ApiInterface {
 
     //end School
 
-
+    @POST("login/changeMyPassword")
+    fun changePassword(
+        @Header("Authorization") authorization: String,
+        @Query ("oldPassword")oldPassword: String,
+        @Query ("newPassword")newPassword: String
+    ):Call<CommonResponse>
 
 }
