@@ -26,8 +26,13 @@ class ChangePasswordActivity : AppCompatActivity() {
         binding=DataBindingUtil.setContentView(this, R.layout.activity_change_password)
         sharedPrefManager=SharedPrefManager(this)
 
-        binding.toolbar.fileName.text="Change Password"
-        binding.toolbar.backArrowBtn.setOnClickListener { finish() }
+//        binding.toolbar.fileName.text="Change Password"
+//        binding.toolbar.backArrowBtn.setOnClickListener { finish() }
+
+        binding.backArrowBtn.setOnClickListener {
+            finish()
+        }
+
 
         binding.newPasswordEt.textInputLayout.hint="New Password"
         binding.oldPasswordEt.textInputLayout.hint="Old Password"
