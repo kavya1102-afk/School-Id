@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.school.idcard.databinding.FragmentSuperadminProfileBinding
 import com.school.idcard.network.SharedPrefManager
+import com.school.idcard.other.ChangePasswordActivity
 import com.school.idcard.other.LoginPage
-import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
+import com.school.idcard.superadmin.SuperAdminDashboard
+import com.school.idcard.superadmin.activity.AddAgentActivity
+import com.school.idcard.superadmin.activity.AddSchoolActivity
 
 
 class SuperadminProfileFragment : Fragment() {
@@ -30,15 +33,50 @@ class SuperadminProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.logoutBtn.setOnClickListener {
-//
-//        }
+        binding.homeSide.setOnClickListener {
+            requireContext().startActivity(
+                Intent(
+                    requireContext(),
+                    SuperAdminDashboard::class.java
+                )
+            )
+        }
 
-        binding.toolbar.toolbar.sideMenu.setOnClickListener { requireContext().startActivity(
-            Intent(requireContext(), SuperAdminSideMenuActivity::class.java)
-        ) }
+        binding.addAgentSide.setOnClickListener {
+            requireContext().startActivity(
+                Intent(
+                    requireContext(),
+                    AddAgentActivity::class.java
+                )
+            )
+        }
+
+        binding.addSchoolSide.setOnClickListener {
+            requireContext(). startActivity(
+                Intent(
+                    requireContext(),
+                    AddSchoolActivity::class.java
+                )
+            )
+        }
+
+        binding.changePasswordSide.setOnClickListener {
+            requireContext().startActivity(
+                Intent(
+                    requireContext(),
+                    ChangePasswordActivity::class.java
+                )
+            )
+        }
+
+        binding.logoutBtn.setOnClickListener {
+            sharedPrefManager.clear()
+            requireContext().startActivity(Intent(requireContext(), LoginPage::class.java))
+        }
 
     }
+
+
 
     private fun logOut() {
 

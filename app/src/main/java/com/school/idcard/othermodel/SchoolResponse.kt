@@ -20,6 +20,7 @@ data class School(
     val schoolEmail: String,
     val principalName: String,
     val agentId: String,
+    val agentName: String?,
     val status: String,
     val createDate: String?,
     val idCardDesign: String?

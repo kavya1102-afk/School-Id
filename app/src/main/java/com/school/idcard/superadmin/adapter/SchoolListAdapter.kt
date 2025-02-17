@@ -1,23 +1,17 @@
 package com.school.idcard.superadmin.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.school.idcard.R
 import com.school.idcard.othermodel.School
-import com.school.idcard.superadmin.activity.AddAgentActivity
-import com.school.idcard.superadmin.activity.AgentDetailsActivity
-import com.school.idcard.superadmin.model.AgentListModel
-import com.school.idcard.superadmin.model.SchoolListModel
 
 class SchoolListAdapter(
     private val list: List<School>,
@@ -37,7 +31,7 @@ class SchoolListAdapter(
         holder.schoolContact.text = list[position].contactNo
         holder.schoolEmail.text = list[position].schoolEmail
         holder.schoolNumber.text = list[position].principalName
-        holder.agentName.text = list[position].agentId
+        holder.agentName.text = list[position].agentName
         holder.date.text = list[position].createDate
         holder.status.text = list[position].status
 
@@ -60,9 +54,10 @@ class SchoolListAdapter(
             }
         }
 
-        holder.viewInfoBtn.setOnClickListener {
-            context.startActivity(Intent(context, AgentDetailsActivity::class.java))
-        }
+//        holder.viewInfoBtn.setOnClickListener {
+//            context.startActivity(Intent(context, AgentDetailsActivity::class.java))
+//        }
+        holder.viewInfoBtn.visibility=View.GONE
 
 
     }

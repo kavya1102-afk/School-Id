@@ -3,6 +3,7 @@ package com.school.idcard.network
 import com.school.idcard.othermodel.AgentResponse
 import com.school.idcard.othermodel.AgentResponse2
 import com.school.idcard.othermodel.LoginResponse
+import com.school.idcard.othermodel.ProfileResponse
 import com.school.idcard.othermodel.SchoolResponse
 import com.school.idcard.othermodel.SchoolsResponse2
 import com.school.idcard.superadmin.model.AgentListModel
@@ -148,5 +149,10 @@ interface ApiInterface {
         @Query ("oldPassword")oldPassword: String,
         @Query ("newPassword")newPassword: String
     ):Call<CommonResponse>
+
+    @GET("login/getProfile")
+    fun getProfile(
+        @Header("Authorization") authorization: String,
+    ):Call<ProfileResponse>
 
 }

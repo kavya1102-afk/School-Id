@@ -8,10 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.school.idcard.R
+import com.school.idcard.agent.SubmittedPrintForNormalAgentActivity
 import com.school.idcard.databinding.ActivitySubmittedForPrintScreenBinding
+import com.school.idcard.network.ApiClient
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.SchoolsResponse2
-import com.school.idcard.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,8 +48,14 @@ class SubmittedForPrintScreen : AppCompatActivity() {
         }
 
         binding.searchBtn.setOnClickListener {
-            startActivity(Intent(this,SchoolDetailsActivitySuperAdmin::class.java)
-                .putExtra("schoolId",selectedSchoolId))
+            val role=sharedPrefManager.getRole().toString()
+            if(role=="PREMIUM"){
+                startActivity(Intent(this,SchoolDetailsActivitySuperAdmin::class.java)
+                    .putExtra("schoolId",selectedSchoolId))
+            }else{
+                startActivity(Intent(this,SubmittedPrintForNormalAgentActivity::class.java)
+                    .putExtra("schoolId",selectedSchoolId))
+            }
         }
 
     }

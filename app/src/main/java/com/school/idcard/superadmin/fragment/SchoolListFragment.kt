@@ -43,6 +43,14 @@ class SchoolListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val role=sharedPrefManager.getRole()
+
+        if(role=="NORMAL"){
+            binding.addSchool.visibility=View.GONE
+        }else{
+            binding.addSchool.visibility=View.VISIBLE
+        }
+
         getSchoolList("")
 
         binding.rvSchoolList.layoutManager = LinearLayoutManager(context)
@@ -65,7 +73,7 @@ class SchoolListFragment : Fragment() {
         }
 
         binding.submittedPrint.setOnClickListener {
-            requireContext().startActivity(Intent(requireContext(),SubmittedForPrintScreen::class.java))
+            requireContext().startActivity(Intent(requireContext(), SubmittedForPrintScreen::class.java))
         }
 
     }
@@ -85,7 +93,7 @@ class SchoolListFragment : Fragment() {
                        binding.noDataFound.visibility==View.VISIBLE
                    }else{
                        for (i in data) {
-                           schoolList.add(School(i.id,i.schoolId,i.schoolName,i.contactNo,i.address1,i.address2,i.city,i.pinCode,i.state,i.country,i.schoolEmail,i.principalName,i.agentId,i.status,i.createDate,i.idCardDesign))
+                           schoolList.add(School(i.id,i.schoolId,i.schoolName,i.contactNo,i.address1,i.address2,i.city,i.pinCode,i.state,i.country,i.schoolEmail,i.principalName,i.agentId,i.agentName,i.status,i.createDate,i.idCardDesign))
                        }
                        binding.rvSchoolList.adapter = adapter
                        adapter.notifyDataSetChanged()
