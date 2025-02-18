@@ -2,7 +2,6 @@ package com.school.idcard.agent
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.school.idcard.R
@@ -31,13 +30,6 @@ class PremiumAgentSideMenuActivity : AppCompatActivity() {
             finish()
         }
 
-        val role=sharedPrefManager.getRole()
-
-        if(role=="NORMAL"){
-            binding.addSchoolSide.visibility=View.GONE
-        }else{
-            binding.addSchoolSide.visibility=View.VISIBLE
-        }
 
         binding.addSchoolSide.setOnClickListener {
             startActivity(

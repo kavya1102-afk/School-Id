@@ -43,13 +43,6 @@ class SchoolListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val role=sharedPrefManager.getRole()
-
-        if(role=="NORMAL"){
-            binding.addSchool.visibility=View.GONE
-        }else{
-            binding.addSchool.visibility=View.VISIBLE
-        }
 
         getSchoolList("")
 

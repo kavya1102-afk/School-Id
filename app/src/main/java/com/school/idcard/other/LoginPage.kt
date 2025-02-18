@@ -67,6 +67,7 @@ class LoginPage : AppCompatActivity() {
         ApiClient.apiInterface.loginUser(LoginRequest(userName,password)).enqueue(object : Callback<LoginResponse>{
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if(response.isSuccessful){
+
                     if(response.body()!!.roleType=="SUPERADMIN"){
                         sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
                         sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
@@ -78,6 +79,7 @@ class LoginPage : AppCompatActivity() {
                     }else{
                         Toast.makeText(this@LoginPage,"Coming Soon", Toast.LENGTH_SHORT).show()
                     }
+
                 }
             }
 
