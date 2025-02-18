@@ -76,7 +76,7 @@ class ChangePasswordActivity : AppCompatActivity() {
 
                 else -> {
 
-                    changePassword(oldPassword, newPassword)
+                    changePassword(oldPassword, newPassword)  
 
                 }
             }
