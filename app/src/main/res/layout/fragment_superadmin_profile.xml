@@ -1,423 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-
-        tools:context=".superadmin.fragment.SuperadminProfileFragment">
-
+        tools:context=".superadmin.activity.SuperAdminSideMenuActivity"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="150dp"
+            android:background="@drawable/background"
+            android:padding="16dp"
+            android:orientation="vertical">
 
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/profile_card_layout" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                android:layout_marginEnd="16dp"/>
+
+
+            <!-- Profile Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/profile"
+                    android:scaleType="centerCrop"
+                    android:padding="4dp"
+                    android:elevation="4dp"
+                    android:layout_marginEnd="18dp"/>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello, Welcome 🎉"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Savannah Nguyen"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="7"
-            android:background="@color/white"
-            android:orientation="vertical">
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:background="@android:color/white">
 
+            <!-- Account Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Details"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#28387B"
+                android:paddingBottom="8dp"/>
+
+            <!-- Dashboard Option -->
             <LinearLayout
+                android:id="@+id/homeSide"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dashboardicon"
+                    android:layout_marginEnd="12dp"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Personal Information"
-                    android:textColor="#28387B"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:text="Dashboard"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2C2C2C" />
 
                 <ImageView
-                    android:layout_width="24sp"
-                    android:layout_height="24sp"
-                    android:layout_marginHorizontal="8dp"
-                    android:src="@drawable/download_icon" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addAgentSide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
 
                 <ImageView
-                    android:layout_width="24sp"
-                    android:layout_height="24sp"
-                    android:layout_marginStart="8dp"
-                    android:contentDescription="Download"
-                    android:src="@drawable/edit_icon"
-                    tools:ignore="HardcodedText" />
-
-            </LinearLayout>
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="#BDBABA" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <!-- Left Side: "Agent ID" -->
-                <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Agent ID"
-                    android:textStyle="bold"
-                    android:textColor="#797D8C"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-                    android:textSize="16sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:text="#2365478"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Agent Name"
-                    android:textColor="#797D8C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-                    android:textSize="14sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:text="Mohit Sharma"
-                    android:textStyle="bold"
-                    android:textColor="#2C2C2C"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Contact No"
-                    android:textColor="#797D8C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-                    android:textSize="14sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:text="+91 9988635214"
-                    android:textStyle="bold"
-                    android:textColor="#2C2C2C"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Status"
-                    android:textColor="#797D8C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-
-                    android:textSize="14sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:textStyle="bold"
-                    android:text="Active"
-                    android:textColor="#00B931"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="horizontal">
+                    android:src="@drawable/agenticon"
+                    android:layout_marginEnd="12dp"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Address Information"
-                    android:textColor="#28387B"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:text="Add Agent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2C2C2C" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addSchoolSide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/school"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add School"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2C2C2C" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
+
+            </LinearLayout>
+
+
+            <!-- Add more menu items here -->
+
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="#BDBABA" />
+                android:layout_height="0.1dp"
+                android:background="@color/black"
+                android:layout_margin="10dp"
+                >
+
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Profile Details"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#28387B"
+                android:paddingBottom="8dp"
+                />
+
+
+
 
             <LinearLayout
+                android:id="@+id/changePasswordSide"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/changepassw"
+                    android:layout_marginEnd="12dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="start"
-
-                    android:text="Address"
-                    android:textColor="#797D8C"
+                    android:text="Change Password"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textSize="16sp" />
+                    android:textColor="#2C2C2C" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-                    android:textSize="14sp" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
 
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:text="euheuhw dieiehei"
-                    android:textColor="#2C2C2C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
             </LinearLayout>
+
 
             <LinearLayout
+                android:id="@+id/logoutBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/white">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logout"
+                    android:layout_marginEnd="12dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="City"
+                    android:text="LogOut"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#797D8C"
-                    android:textSize="16sp" />
+                    android:textColor="#2C2C2C" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-                    android:textSize="14sp" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_right"/>
 
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:text="New Delhi"
-                    android:textColor="#2C2C2C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="State"
-                    android:textColor="#797D8C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-                    android:textSize="14sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:text="Delhi"
-                    android:textColor="#2C2C2C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="PinCode"
-                    android:textColor="#797D8C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.3"
-                    android:gravity="center"
-                    android:text=":"
-                    android:textColor="#2C2C2C"
-                    android:textSize="14sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".4"
-                    android:gravity="end"
-                    android:text="111098"
-                    android:textColor="#2C2C2C"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
-
-
 </layout>

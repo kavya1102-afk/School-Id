@@ -67,17 +67,19 @@ class LoginPage : AppCompatActivity() {
         ApiClient.apiInterface.loginUser(LoginRequest(userName,password)).enqueue(object : Callback<LoginResponse>{
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if(response.isSuccessful){
+
                     if(response.body()!!.roleType=="SUPERADMIN"){
                         sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
                         sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
                         startActivity(Intent(this@LoginPage,SuperAdminDashboard::class.java))
-                    }else if(response.body()!!.roleType=="PREMIUM"){
+                    }else if(response.body()!!.roleType=="PREMIUM" || response.body()!!.roleType=="NORMAL"  ){
                         sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
                         sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
                         startActivity(Intent(this@LoginPage,PremiumAgentDashboard::class.java))
                     }else{
                         Toast.makeText(this@LoginPage,"Coming Soon", Toast.LENGTH_SHORT).show()
                     }
+
                 }
             }
 

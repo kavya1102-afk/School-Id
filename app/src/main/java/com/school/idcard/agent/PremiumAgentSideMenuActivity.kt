@@ -30,6 +30,7 @@ class PremiumAgentSideMenuActivity : AppCompatActivity() {
             finish()
         }
 
+
         binding.addSchoolSide.setOnClickListener {
             startActivity(
                 Intent(

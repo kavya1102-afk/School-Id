@@ -26,7 +26,7 @@ class ApiClient {
                 .build()
             Retrofit.Builder()
                 .baseUrl("https://scriwo.com/id/")
-//                .baseUrl("http://192.168.1.12:6001/")
+//                .baseUrl("http://192.168.1.16:6001/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()

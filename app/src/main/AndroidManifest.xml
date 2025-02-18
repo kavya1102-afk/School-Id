@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".agent.SubmittedPrintForNormalAgentActivity"
+            android:exported="false" />
+        <activity
             android:name=".agent.PremiumAgentSideMenuActivity"
             android:exported="false" />
         <activity
@@ -38,8 +41,9 @@
             android:name=".superadmin.activity.SubmittedForPrintScreen"
             android:exported="false" />
         <activity
-            android:name=".superadmin.activity.SubmittedForPrintActivity"
-            android:exported="false" />
+            android:name=".superadmin.activity.SubmittedForPrintScreen"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".superadmin.activity.AddSchoolActivity"
             android:exported="false" /> <!-- <activity -->

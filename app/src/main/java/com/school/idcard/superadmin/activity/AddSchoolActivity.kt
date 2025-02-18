@@ -27,7 +27,7 @@ class AddSchoolActivity : AppCompatActivity() {
     private lateinit var sharedPrefManager: SharedPrefManager
     private var status2:String="Active"
     private var role:String="SUPERADMIN"
-    private lateinit var selectedAgentId:String
+    private var selectedAgentId:String ?=""
     val selectedFields = mutableListOf<String>()
     private val agentMap = mutableMapOf<String, String>() // Key: Name, Value: ID
 

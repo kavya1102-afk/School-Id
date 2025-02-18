@@ -46,6 +46,7 @@
                 <ImageView
                     android:layout_width="24sp"
                     android:layout_height="24sp"
+                    android:visibility="gone"
                     android:layout_marginHorizontal="8dp"
                     android:src="@drawable/download_icon" />
 
@@ -54,6 +55,7 @@
                     android:layout_height="24sp"
                     android:layout_marginStart="8dp"
                     android:contentDescription="Download"
+                    android:visibility="gone"
                     android:src="@drawable/edit_icon"
                     tools:ignore="HardcodedText" />
 
@@ -97,6 +99,7 @@
 
 
                 <TextView
+                    android:id="@+id/agentId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
@@ -137,6 +140,7 @@
 
 
                 <TextView
+                    android:id="@+id/agentName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
@@ -178,6 +182,7 @@
 
 
                 <TextView
+                    android:id="@+id/contactAgent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
@@ -189,6 +194,47 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="Email-Id"
+                    android:textColor="#797D8C"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textColor="#2C2C2C"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/agentEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".4"
+                    android:gravity="end"
+                    android:text="+91 9988635214"
+                    android:textStyle="bold"
+                    android:textColor="#2C2C2C"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -219,6 +265,7 @@
 
 
                 <TextView
+                    android:id="@+id/statusAgent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
@@ -286,6 +333,7 @@
 
 
                 <TextView
+                    android:id="@+id/agentAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
@@ -325,6 +373,7 @@
 
 
                 <TextView
+                    android:id="@+id/agentCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
@@ -364,6 +413,7 @@
 
 
                 <TextView
+                    android:id="@+id/agentState"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
@@ -403,6 +453,7 @@
 
 
                 <TextView
+                    android:id="@+id/agentPincode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"

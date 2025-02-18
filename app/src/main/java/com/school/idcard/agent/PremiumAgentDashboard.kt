@@ -10,7 +10,6 @@ import com.school.idcard.agent.fragment.PremiumProfileFragment
 import com.school.idcard.agent.fragment.PremiumSettingFragment
 import com.school.idcard.databinding.ActivityPremiumAgentDashboardBinding
 import com.school.idcard.superadmin.fragment.SchoolListFragment
-import com.school.idcard.superadmin.fragment.SuperAdminHomeFragment
 
 class PremiumAgentDashboard : AppCompatActivity() {
 
@@ -29,7 +28,7 @@ class PremiumAgentDashboard : AppCompatActivity() {
         fragmentTransaction.add(R.id.frameLayout, PremiumHomeFragment())
         fragmentTransaction.commit()
 
-        loadFragment(SuperAdminHomeFragment())
+        loadFragment(PremiumHomeFragment())
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
