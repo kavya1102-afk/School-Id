@@ -22,6 +22,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
+
+
 class SchoolListFragment : Fragment() {
 
     private var _binding: FragmentSchoolListBinding? = null
@@ -45,6 +47,12 @@ class SchoolListFragment : Fragment() {
 
 
         getSchoolList("")
+        binding.loaderLayout.visibility = View.VISIBLE
+
+
+
+
+
 
         binding.rvSchoolList.layoutManager = LinearLayoutManager(context)
         adapter = SchoolListAdapter(schoolList, "Premium", requireContext())
@@ -80,6 +88,8 @@ class SchoolListFragment : Fragment() {
                 response: Response<SchoolResponse>
             ) {
                 if (response.isSuccessful) {
+                    binding.loaderLayout.visibility = View.GONE
+                    binding.lottieProgress.pauseAnimation()
                     schoolList.clear()
                     val data = response.body()!!.schools
                    if(data==null){
@@ -95,6 +105,8 @@ class SchoolListFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<SchoolResponse>, t: Throwable) {
+                binding.loaderLayout.visibility = View.GONE
+                binding.lottieProgress.pauseAnimation()
                 Toast.makeText(requireContext(), t.message, Toast.LENGTH_SHORT).show()
             }
 

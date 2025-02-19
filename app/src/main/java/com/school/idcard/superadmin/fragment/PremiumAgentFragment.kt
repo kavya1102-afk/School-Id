@@ -42,6 +42,11 @@ class PremiumAgentFragment : Fragment(), AgentActionListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Show Progress Animation and Disable Button
+        binding.loaderLayout.visibility = View.VISIBLE
+        binding.lottieProgress.playAnimation()
+
+
         getAgentList("")
 
 
@@ -79,6 +84,8 @@ class PremiumAgentFragment : Fragment(), AgentActionListener {
                 response: Response<AgentListModel>
             ) {
                 if(response.isSuccessful){
+                    binding.loaderLayout.visibility = View.GONE
+                    binding.lottieProgress.pauseAnimation()
                     agentList.clear()
                     if(response.body()!!.agents!=null){
                         val data = response.body()!!.agents
@@ -96,6 +103,8 @@ class PremiumAgentFragment : Fragment(), AgentActionListener {
             }
 
             override fun onFailure(call: Call<AgentListModel>, t: Throwable) {
+                binding.loaderLayout.visibility = View.GONE
+                binding.lottieProgress.pauseAnimation()
                 Toast.makeText(requireContext(),t.message,Toast.LENGTH_SHORT).show()
             }
 
