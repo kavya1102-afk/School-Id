@@ -47,6 +47,12 @@ class SchoolListFragment : Fragment(), SchoolActionListener {
 
 
         getSchoolList("")
+        binding.loaderLayout.visibility = View.VISIBLE
+
+
+
+
+
 
         binding.rvSchoolList.layoutManager = LinearLayoutManager(context)
         adapter = SchoolListAdapter(schoolList, "Premium", requireContext(), this)
@@ -82,6 +88,8 @@ class SchoolListFragment : Fragment(), SchoolActionListener {
                 response: Response<SchoolResponse>
             ) {
                 if (response.isSuccessful) {
+                    binding.loaderLayout.visibility = View.GONE
+                    binding.lottieProgress.pauseAnimation()
                     schoolList.clear()
                     val data = response.body()!!.schools
                    if(data==null){
@@ -97,6 +105,8 @@ class SchoolListFragment : Fragment(), SchoolActionListener {
             }
 
             override fun onFailure(call: Call<SchoolResponse>, t: Throwable) {
+                binding.loaderLayout.visibility = View.GONE
+                binding.lottieProgress.pauseAnimation()
                 Toast.makeText(requireContext(), t.message, Toast.LENGTH_SHORT).show()
             }
 

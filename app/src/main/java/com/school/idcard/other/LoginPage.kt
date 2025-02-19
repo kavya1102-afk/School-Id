@@ -2,6 +2,7 @@ package com.school.idcard.other
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -53,12 +54,17 @@ class LoginPage : AppCompatActivity() {
                 binding.passwordEt.textInputLayout.error = null  // Remove error if input is valid
             }
 
+            // Show Progress Animation and Disable Button
+            binding.loaderLayout.visibility = View.VISIBLE
+            binding.lottieProgress.playAnimation()
+            binding.loginBtn.isEnabled = false
+
             loginFun(userName, password)
 
         }
 
         binding.registerdViaGoogle.setOnClickListener {
-            Toast.makeText(this,"Coming Soon",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -66,8 +72,11 @@ class LoginPage : AppCompatActivity() {
     private fun loginFun(userName: String, password: String) {
         ApiClient.apiInterface.loginUser(LoginRequest(userName,password)).enqueue(object : Callback<LoginResponse>{
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                if(response.isSuccessful){
 
+                if(response.isSuccessful){
+                    binding.loaderLayout.visibility = View.GONE
+                    binding.lottieProgress.pauseAnimation()
+                    binding.loginBtn.isEnabled = true
                     if(response.body()!!.roleType=="SUPERADMIN"){
                         sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
                         sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
@@ -80,10 +89,19 @@ class LoginPage : AppCompatActivity() {
                         Toast.makeText(this@LoginPage,"Coming Soon", Toast.LENGTH_SHORT).show()
                     }
 
+                }else{
+                    binding.loaderLayout.visibility = View.GONE
+                    binding.lottieProgress.pauseAnimation()
+                    binding.loginBtn.isEnabled = true
+                    Toast.makeText(this@LoginPage,response.message(),Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                // Hide Progress Animation and Enable Button on Failure
+                binding.loaderLayout.visibility = View.GONE
+                binding.lottieProgress.pauseAnimation()
+                binding.loginBtn.isEnabled = true
                 Toast.makeText(this@LoginPage,t.message,Toast.LENGTH_SHORT).show()
             }
 

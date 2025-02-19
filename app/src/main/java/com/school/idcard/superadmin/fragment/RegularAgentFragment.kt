@@ -43,6 +43,9 @@ class RegularAgentFragment : Fragment(), AgentActionListener {
 
         binding.rvAgentList2.layoutManager= LinearLayoutManager(context)
 
+        // Show Progress Animation and Disable Button
+        binding.loaderLayout.visibility = View.VISIBLE
+        binding.lottieProgress.playAnimation()
         getAgentList("")
 
 
@@ -76,6 +79,8 @@ class RegularAgentFragment : Fragment(), AgentActionListener {
                 response: Response<AgentListModel>
             ) {
                 if(response.isSuccessful){
+                    binding.loaderLayout.visibility = View.GONE
+                    binding.lottieProgress.pauseAnimation()
                     agentList.clear()
                     val data = response.body()!!.agents
                     if(data!=null){
@@ -93,6 +98,8 @@ class RegularAgentFragment : Fragment(), AgentActionListener {
             }
 
             override fun onFailure(call: Call<AgentListModel>, t: Throwable) {
+                binding.loaderLayout.visibility = View.GONE
+                binding.lottieProgress.pauseAnimation()
                 Toast.makeText(requireContext(),t.message, Toast.LENGTH_SHORT).show()
             }
 

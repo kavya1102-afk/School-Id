@@ -61,6 +61,7 @@ dependencies {
     implementation (libs.androidx.viewpager2)
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
+    implementation(libs.lottie)
     //noinspection GradleDependency
     implementation (libs.okhttp)
     implementation (libs.logging.interceptor)

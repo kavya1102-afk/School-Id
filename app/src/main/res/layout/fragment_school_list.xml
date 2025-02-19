@@ -122,6 +122,9 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
             tools:listitem="@layout/agent_details_item" />
 
+
+
+
         <ImageView
             android:id="@+id/noDataFound"
             android:layout_width="wrap_content"
@@ -130,6 +133,33 @@
             android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
             app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <LinearLayout
+            android:id="@+id/loaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieProgress"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="300dp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading_animation" />
+
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

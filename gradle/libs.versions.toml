@@ -37,6 +37,7 @@ navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 pinview = { module = "io.github.chaosleung:pinview", version.ref = "pinview" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "converterGson" }
+lottie = { group = "com.airbnb.android", name = "lottie", version = "5.0.3" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
