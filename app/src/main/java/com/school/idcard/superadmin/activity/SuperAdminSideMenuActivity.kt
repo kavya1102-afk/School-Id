@@ -21,6 +21,9 @@ class SuperAdminSideMenuActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_super_admin_side_menu)
         sharedPrefManager = SharedPrefManager(this)
 
+        binding.backArrowBtn.setOnClickListener { finish() }
+
+
         binding.homeSide.setOnClickListener {
             startActivity(
                 Intent(

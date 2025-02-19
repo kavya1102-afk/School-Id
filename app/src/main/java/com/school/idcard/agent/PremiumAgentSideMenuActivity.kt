@@ -20,6 +20,9 @@ class PremiumAgentSideMenuActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_premium_agent_side_menu)
         sharedPrefManager = SharedPrefManager(this)
 
+
+        binding.backArrowBtn.setOnClickListener { finish() }
+
         binding.homeSide.setOnClickListener {
             startActivity(
                 Intent(

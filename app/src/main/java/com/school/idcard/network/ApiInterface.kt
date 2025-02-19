@@ -1,7 +1,9 @@
 package com.school.idcard.network
 
+import com.school.idcard.othermodel.AddSchoolRequest
 import com.school.idcard.othermodel.AgentResponse
 import com.school.idcard.othermodel.AgentResponse2
+import com.school.idcard.othermodel.GetSchoolResponse
 import com.school.idcard.othermodel.LoginResponse
 import com.school.idcard.othermodel.ProfileResponse
 import com.school.idcard.othermodel.SchoolResponse
@@ -50,7 +52,7 @@ interface ApiInterface {
     @GET("agent/getAllAgent")
     fun getAgent(@Header("Authorization") token: String, @Query("status")status: String): Call<AgentListModel>
 
-    @DELETE("/agent/deleteById/{id}")
+    @DELETE("agent/deleteById/{id}")
     fun deleteAgent(
         @Header("Authorization") token: String,
         @Path("id") agentId: String
@@ -86,23 +88,19 @@ interface ApiInterface {
 
     //start school
 
-    @POST("/school/add")
+    @POST("school/add")
     fun addSchool(
         @Header("Authorization") authorization: String,
-        @Query("schoolName") schoolName: String,
-        @Query("contactNo") contactNo: String?,
-        @Query("address1") address1: String,
-        @Query("address2") address2: String,
-        @Query("city") city: String?,
-        @Query("pinCode") pinCode: String,
-        @Query("state") state: String,
-        @Query("country") country: String,
-        @Query("schoolEmail") schoolEmail: String,
-        @Query("principalName") principalName: String?,
-        @Query("agentId") agentId: String?,
-        @Query("status") status: String,
-        @Query("addField") addField: List<String>,
+        @Body requestBody: AddSchoolRequest
     ): Call<CommonResponse>
+
+    @PUT("school/update/{id}")
+    fun updateSchool(
+        @Header("Authorization") authorization: String,
+        @Body requestBody: AddSchoolRequest,
+        @Path ("id") id: String
+    ): Call<CommonResponse>
+
 
     @GET("agent/getAllLight")
     fun getAgentList(
@@ -154,5 +152,18 @@ interface ApiInterface {
     fun getProfile(
         @Header("Authorization") authorization: String,
     ):Call<ProfileResponse>
+
+    @GET("school/getById/{id}")
+    fun getSchoolViaId(
+        @Header("Authorization") authorization: String,
+        @Path("id") id: String,
+    ):Call<GetSchoolResponse>
+
+    @DELETE("school/deleteById/{id}")
+    fun deleteSchool(
+        @Header("Authorization") token: String,
+        @Path("id") schoolId: String
+    ): Call<CommonResponse>
+
 
 }
