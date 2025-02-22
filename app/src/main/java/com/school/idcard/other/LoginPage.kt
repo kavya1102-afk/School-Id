@@ -28,15 +28,20 @@ class LoginPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_login_page)
         sharedPrefManager=SharedPrefManager(this)
+
         binding.userNameEt.textInputLayout.hint="Registered Email Id"
         binding.passwordEt.textInputLayout.hint="Password"
 
         binding.passwordEt.textInputLayout.endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE
 
 
+
+
+
+
         binding.loginBtn.setOnClickListener {
-            val userName= binding.userNameEt.textInputLayout.editText!!.text.trim().toString()
-            val password= binding.passwordEt.textInputLayout.editText!!.text.trim().toString()
+            val userName= binding.userNameEt.textInputLayout.editText!!.text.trim().toString().replace(" ","")
+            val password= binding.passwordEt.textInputLayout.editText!!.text.trim().toString().replace(" ","")
 
 
             if (userName.isEmpty()) {

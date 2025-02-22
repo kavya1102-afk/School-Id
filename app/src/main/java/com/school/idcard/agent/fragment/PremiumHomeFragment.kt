@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.school.idcard.agent.PremiumAgentSideMenuActivity
 import com.school.idcard.databinding.FragmentPremiumHomeBinding
 import com.school.idcard.superadmin.adapter.super_details_card_adapter
 import com.school.idcard.superadmin.model.CardDetailsModel
+import java.util.Calendar
 
 class PremiumHomeFragment : Fragment() {
 
@@ -28,6 +30,20 @@ class PremiumHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+
+        val greeting = when (hour) {
+            in 0..11 -> "Good Morning 🌅"
+            in 12..15 -> "Good Afternoon ☀️"
+            else -> "Good Evening 🌙"
+        }
+
+     binding.profileCard.greetingTextView.text=greeting
+
+
+
 
         binding.profileCard.toolbar.sideMenu.setOnClickListener { requireContext().startActivity(
             Intent(requireContext(), PremiumAgentSideMenuActivity::class.java)

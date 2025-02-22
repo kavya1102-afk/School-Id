@@ -25,7 +25,7 @@ class ApiClient {
                 .connectTimeout(60,TimeUnit.SECONDS)
                 .build()
             Retrofit.Builder()
-                .baseUrl("https://scriwo.com/id/")
+                .baseUrl("https://scriwo.com/idCard/")
 //                .baseUrl("http://192.168.1.16:6001/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)

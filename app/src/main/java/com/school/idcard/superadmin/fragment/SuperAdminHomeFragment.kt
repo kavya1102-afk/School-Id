@@ -12,6 +12,7 @@ import com.school.idcard.databinding.FragmentSuperAdminHomeBinding
 import com.school.idcard.superadmin.activity.SuperAdminSideMenuActivity
 import com.school.idcard.superadmin.adapter.super_details_card_adapter
 import com.school.idcard.superadmin.model.CardDetailsModel
+import java.util.Calendar
 
 class SuperAdminHomeFragment : Fragment() {
     private var _binding: FragmentSuperAdminHomeBinding? = null
@@ -27,6 +28,18 @@ class SuperAdminHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+
+        val greeting = when (hour) {
+            in 0..11 -> "Good Morning 🌅"
+            in 12..15 -> "Good Afternoon ☀️"
+            else -> "Good Evening 🌙"
+        }
+
+        binding.profileCard.greetingTextView.text=greeting
+
 
         binding.profileCard.toolbar.sideMenu.setOnClickListener { requireContext().startActivity(
             Intent(requireContext(),SuperAdminSideMenuActivity::class.java)
