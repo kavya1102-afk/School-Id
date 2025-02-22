@@ -49,11 +49,6 @@ class SchoolListFragment : Fragment(), SchoolActionListener {
         getSchoolList("")
         binding.loaderLayout.visibility = View.VISIBLE
 
-
-
-
-
-
         binding.rvSchoolList.layoutManager = LinearLayoutManager(context)
         adapter = SchoolListAdapter(schoolList, "Premium", requireContext(), this)
 

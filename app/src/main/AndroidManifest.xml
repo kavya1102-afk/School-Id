@@ -17,6 +17,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".admin.AddStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminSideMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".agent.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".superadmin.activity.EditSchoolActivity"
             android:exported="false" />
         <activity

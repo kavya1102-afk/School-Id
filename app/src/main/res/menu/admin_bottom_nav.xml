@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_bt5"
+        android:title=""
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/nav_print"
+        android:icon="@drawable/print_icon"
+        android:title=""
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/nav_staff"
+        android:icon="@drawable/ic_user"
+        android:title=""
+        app:showAsAction="collapseActionView"/>
+
+    <item
+        android:id="@+id/nav_student"
+        android:icon="@drawable/student_icon"
+        android:title=""
+        app:showAsAction="collapseActionView"/>
+
+    <item
+        android:id="@+id/nav_promote"
+        android:icon="@drawable/promot_icon"
+        android:title=""
+        app:showAsAction="collapseActionView"/>
+
+
+
+</menu>

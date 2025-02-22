@@ -1,5 +1,6 @@
 package com.school.idcard.network
 
+import com.school.idcard.admin.RoleResponse
 import com.school.idcard.othermodel.AddSchoolRequest
 import com.school.idcard.othermodel.AgentResponse
 import com.school.idcard.othermodel.AgentResponse2
@@ -11,6 +12,7 @@ import com.school.idcard.othermodel.SchoolsResponse2
 import com.school.idcard.superadmin.model.AgentListModel
 import com.school.idcard.superadmin.model.StaffResponse
 import com.school.idcard.superadmin.model.StudentSuperAdminModel
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -19,6 +21,7 @@ import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -164,6 +167,48 @@ interface ApiInterface {
         @Header("Authorization") token: String,
         @Path("id") schoolId: String
     ): Call<CommonResponse>
+
+    @PUT("agent/updateByToken")
+    fun updateAgentProfile(
+        @Header("Authorization") token:String,
+        @Query("firstName")firstName:String,
+        @Query("lastName")lastName:String,
+        @Query("contactNo")contactNo:String,
+        @Query("address1")address1:String,
+        @Query("state")state: String,
+        @Query("city")city: String,
+        @Query("pinCode")pinCode: String,
+        @Query("country")country: String,
+    ):Call<CommonResponse>
+
+
+
+    //Admin Panel Related Api
+
+    @POST("role/add")
+    fun addRole(
+        @Header("Authorization") authorization: String,
+        @Query("roleName") roleName:String
+    ):Call<CommonResponse>
+
+    @GET("role/getAll")
+    fun getAllRoles(@Header("Authorization") token: String): Call<RoleResponse>
+
+    @POST("staff/add")
+    fun addStaff(
+        @Header("Authorization") authorization: String,
+        @Query("staffName") staffName:String,
+        @Query("contactNo") contactNo:String,
+        @Query("address1") address1:String,
+        @Query("address2") address2:String,
+        @Query("city") city:String,
+        @Query("pinCode") pinCode:String,
+        @Query("state") state:String,
+        @Query("country") country:String,
+        @Query("emailId") emailId:String,
+        @Query("roleType") roleType:String,
+        @Part photo: MultipartBody.Part?
+    ):Call<CommonResponse>
 
 
 }

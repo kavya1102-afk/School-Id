@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".agent.EditProfileActivity">
+
+        <include layout="@layout/toolbar_layout_3"
+            android:id="@+id/toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/agentId" />
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentFirstName" />
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentLastName"/>
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentEmail"/>
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentContact"/>
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentAddress"/>
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentCity"/>
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentState"/>
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentPincode"/>
+
+            <include layout="@layout/edittext_layout"
+                android:id="@+id/addAgentCountry"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateProfileBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#22316C"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:text="Update Profile"
+                android:layout_marginVertical="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:cornerRadius="5dp"
+                app:iconGravity="textStart"
+                app:iconTint="@android:color/white"
+                app:strokeColor="@android:color/transparent"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

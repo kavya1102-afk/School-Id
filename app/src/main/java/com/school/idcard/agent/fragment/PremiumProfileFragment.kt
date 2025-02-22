@@ -1,6 +1,7 @@
 package com.school.idcard.agent.fragment
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.school.idcard.agent.EditProfileActivity
 import com.school.idcard.databinding.FragmentPremiumProfileBinding
 import com.school.idcard.network.ApiClient
 import com.school.idcard.network.SharedPrefManager
@@ -37,6 +39,10 @@ class PremiumProfileFragment : Fragment() {
 
         binding.toolbar.toolbar.sideMenu.visibility=View.GONE
 
+        binding.editProfile.setOnClickListener {
+            requireContext().startActivity(Intent(requireContext(), EditProfileActivity::class.java))
+        }
+
         getProfile()
 
     }
@@ -54,7 +60,7 @@ class PremiumProfileFragment : Fragment() {
                     if(response.body()!!.profile!=null){
                         binding.agentId.text=response.body()!!.profile!!.agentId
                         binding.agentName.text="${response.body()!!.profile!!.firstName} ${response.body()!!.profile!!.lastName}"
-                        binding.contactAgent.text="+91 -${response.body()!!.profile!!.contactNo}"
+                        binding.contactAgent.text="+91-${response.body()!!.profile!!.contactNo}"
                         binding.agentAddress.text="${response.body()!!.profile!!.address1}"
                         binding.agentCity.text="${response.body()!!.profile!!.city}"
                         binding.agentState.text="${response.body()!!.profile!!.state}"

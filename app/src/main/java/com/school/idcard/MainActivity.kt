@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
+import com.school.idcard.admin.AdminDashboardActivity
 import com.school.idcard.agent.PremiumAgentDashboard
 import com.school.idcard.databinding.ActivityMainBinding
 import com.school.idcard.network.SharedPrefManager
@@ -41,6 +42,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     "NORMAL" -> {
                         startActivity(Intent(this,PremiumAgentDashboard::class.java))
+                    }
+                    "ADMIN" -> {
+                        startActivity(Intent(this,AdminDashboardActivity::class.java))
                     }
                     else -> {
                         Toast.makeText(this,"Coming Soon", Toast.LENGTH_SHORT).show()

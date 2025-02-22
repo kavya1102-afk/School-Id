@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.textfield.TextInputLayout
 import com.school.idcard.R
+import com.school.idcard.admin.AdminDashboardActivity
 import com.school.idcard.agent.PremiumAgentDashboard
 import com.school.idcard.databinding.ActivityLoginPageBinding
 import com.school.idcard.network.ApiClient
@@ -85,6 +86,10 @@ class LoginPage : AppCompatActivity() {
                         sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
                         sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
                         startActivity(Intent(this@LoginPage,PremiumAgentDashboard::class.java))
+                    }else if(response.body()!!.roleType=="ADMIN"){
+                        sharedPrefManager.saveToken(response.body()!!.token) // Save token in SharedPreferences
+                        sharedPrefManager.saveRole(response.body()!!.roleType) // Save token in SharedPreferences
+                        startActivity(Intent(this@LoginPage,AdminDashboardActivity::class.java))
                     }else{
                         Toast.makeText(this@LoginPage,"Coming Soon", Toast.LENGTH_SHORT).show()
                     }

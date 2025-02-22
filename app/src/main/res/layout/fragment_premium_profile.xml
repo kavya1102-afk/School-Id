@@ -51,11 +51,11 @@
                     android:src="@drawable/download_icon" />
 
                 <ImageView
+                    android:id="@+id/editProfile"
                     android:layout_width="24sp"
                     android:layout_height="24sp"
                     android:layout_marginStart="8dp"
                     android:contentDescription="Download"
-                    android:visibility="gone"
                     android:src="@drawable/edit_icon"
                     tools:ignore="HardcodedText" />
 
