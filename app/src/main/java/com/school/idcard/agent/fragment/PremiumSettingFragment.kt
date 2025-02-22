@@ -12,6 +12,7 @@ import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.other.ChangePasswordActivity
 import com.school.idcard.other.LoginPage
 import com.school.idcard.superadmin.activity.AddSchoolActivity
+import java.util.Calendar
 
 class PremiumSettingFragment : Fragment() {
 
@@ -30,6 +31,19 @@ class PremiumSettingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+
+        val greeting = when (hour) {
+            in 0..11 -> "Good Morning 🌅"
+            in 12..15 -> "Good Afternoon ☀️"
+            else -> "Good Evening 🌙"
+        }
+
+        binding.greetingTextView.text=greeting
+
+
 
         binding.homeSide.setOnClickListener {
             startActivity(

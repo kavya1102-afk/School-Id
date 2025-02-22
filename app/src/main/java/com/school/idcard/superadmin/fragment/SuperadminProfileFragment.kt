@@ -13,6 +13,7 @@ import com.school.idcard.other.LoginPage
 import com.school.idcard.superadmin.SuperAdminDashboard
 import com.school.idcard.superadmin.activity.AddAgentActivity
 import com.school.idcard.superadmin.activity.AddSchoolActivity
+import java.util.Calendar
 
 
 class SuperadminProfileFragment : Fragment() {
@@ -24,14 +25,32 @@ class SuperadminProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View {
         _binding = FragmentSuperadminProfileBinding.inflate(inflater, container, false)
         sharedPrefManager=SharedPrefManager(requireContext())
         return binding.root
+
+
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+
+
+        val greeting = when (hour) {
+            in 0..11 -> "Good Morning 🌅"
+            in 12..15 -> "Good Afternoon ☀️"
+            else -> "Good Evening 🌙"
+        }
+
+
+        binding.greetingTextView.text = greeting
 
         binding.homeSide.setOnClickListener {
             requireContext().startActivity(
