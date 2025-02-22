@@ -1,22 +1,25 @@
 package com.school.idcard.superadmin.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.school.idcard.R
+import com.school.idcard.network.SchoolActionListener
 import com.school.idcard.othermodel.School
+import com.school.idcard.superadmin.activity.AddSchoolActivity
 
 class SchoolListAdapter(
     private val list: List<School>,
     private val type: String,
-    var context: Context
+    var context: Context,
+    private val listener: SchoolActionListener
 ) : RecyclerView.Adapter<SchoolListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -42,22 +45,20 @@ class SchoolListAdapter(
         }
 
         holder.editSchool.setOnClickListener {
-//            context.startActivity(
-//                Intent(context, AddAgentActivity::class.java)
-//                    .putExtra("type", 1)
-//            )
+            context.startActivity(
+                Intent(context, AddSchoolActivity::class.java)
+                    .putExtra("type", 1)
+                    .putExtra("schoolId",list[position].id)
+            )
         }
 
         holder.deleteSchool.setOnClickListener {
             showDeleteDialog(context) {
-                Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
+                listener.onDeleteSchool(list[position].id.toString()) // Call the interface function
             }
         }
 
-//        holder.viewInfoBtn.setOnClickListener {
-//            context.startActivity(Intent(context, AgentDetailsActivity::class.java))
-//        }
-        holder.viewInfoBtn.visibility=View.GONE
+        holder.viewInfoBtn.visibility=View.INVISIBLE
 
 
     }

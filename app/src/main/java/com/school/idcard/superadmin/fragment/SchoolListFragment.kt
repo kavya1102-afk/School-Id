@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.school.idcard.databinding.FragmentSchoolListBinding
 import com.school.idcard.network.ApiClient
+import com.school.idcard.network.CommonResponse
+import com.school.idcard.network.SchoolActionListener
 import com.school.idcard.network.SharedPrefManager
 import com.school.idcard.othermodel.School
 import com.school.idcard.othermodel.SchoolResponse
@@ -22,9 +24,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-
-
-class SchoolListFragment : Fragment() {
+class SchoolListFragment : Fragment(), SchoolActionListener {
 
     private var _binding: FragmentSchoolListBinding? = null
     private lateinit var sharedPrefManager: SharedPrefManager
@@ -55,7 +55,7 @@ class SchoolListFragment : Fragment() {
 
 
         binding.rvSchoolList.layoutManager = LinearLayoutManager(context)
-        adapter = SchoolListAdapter(schoolList, "Premium", requireContext())
+        adapter = SchoolListAdapter(schoolList, "Premium", requireContext(), this)
 
         binding.addSchool.setOnClickListener {
             requireContext().startActivity(
@@ -117,6 +117,25 @@ class SchoolListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null  // Prevent memory leaks
+    }
+
+    override fun onDeleteSchool(schoolId: String) {
+        val token="Bearer ${sharedPrefManager.getToken()}"
+        ApiClient.apiInterface.deleteSchool(token.toString(), schoolId).enqueue(object : Callback<CommonResponse>{
+            override fun onResponse(call: Call<CommonResponse>, response: Response<CommonResponse>) {
+                if(response.isSuccessful){
+                    Toast.makeText(requireContext(),response.body()!!.message,Toast.LENGTH_SHORT).show()
+                    getSchoolList("")
+                }else{
+                    Toast.makeText(requireContext(),response.body()!!.message,Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<CommonResponse>, t: Throwable) {
+                Toast.makeText(requireContext(),t.message,Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
 

@@ -5,3 +5,9 @@ interface AgentActionListener {
     fun onDeleteStaff(agentId: String)
 
 }
+
+
+interface SchoolActionListener {
+    fun onDeleteSchool(schoolId: String)
+
+}
